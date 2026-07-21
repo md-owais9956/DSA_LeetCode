@@ -2,38 +2,54 @@ class Solution {
 public:
     int maxActiveSectionsAfterTrade(string s) {
         int ones = 0;
-        for (char c : s)
-            if (c == '1') ones++;
+        for(char c : s)
+            if(c == '1')
+                ones++;
 
-        string t = "1" + s + "1";
-        int n = t.size();
+        s = "1" + s + "1";
+
+        int n = s.size();
+        int i = 0;
 
         int ans = ones;
 
-        int i = 0;
-        int prevZero = 0;
+        // Skip first 1's
+        while(i < n && s[i] == '1')
+            i++;
 
-        while (i < n) {
-            char ch = t[i];
-            int j = i;
-            while (j < n && t[j] == ch) j++;
+        // Read first 0-block
+        int c10 = 0;
+        while(i < n && s[i] == '0'){
+            c10++;
+            i++;
+        }
 
-            int len = j - i;
+        while(i < n){
 
-            if (ch == '0') {
-                prevZero = len;
-            } else {
-                // Interior 1-block?
-                if (i > 0 && j < n && t[i - 1] == '0' && t[j] == '0') {
-                    int k = j;
-                    while (k < n && t[k] == '0') k++;
-                    int nextZero = k - j;
-
-                    ans = max(ans, ones + prevZero + nextZero);
-                }
+            // Read middle 1-block
+            int c11 = 0;
+            while(i < n && s[i] == '1'){
+                c11++;
+                i++;
             }
 
-            i = j;
+            if(c11 == 0)
+                break;
+
+            // Read right 0-block
+            int c20 = 0;
+            while(i < n && s[i] == '0'){
+                c20++;
+                i++;
+            }
+
+            if(c20 == 0)
+                break;
+
+            ans = max(ans, ones + c10 + c20);
+
+            // Slide the window
+            c10 = c20;
         }
 
         return ans;
