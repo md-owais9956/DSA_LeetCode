@@ -1,31 +1,39 @@
 class Solution {
 public:
+    static const int MAXX = 2048;
+
+    void fwht(vector<long long>& a) {
+        int n = a.size();
+        for (int len = 1; len < n; len <<= 1) {
+            for (int i = 0; i < n; i += len << 1) {
+                for (int j = 0; j < len; j++) {
+                    long long u = a[i + j];
+                    long long v = a[i + j + len];
+                    a[i + j] = u + v;
+                    a[i + j + len] = u - v;
+                }
+            }
+        }
+    }
+
     int uniqueXorTriplets(vector<int>& nums) {
-        int n = nums.size();
-        if (n == 1) return 1;
+        vector<long long> f(MAXX, 0);
 
-        unordered_set<int> pairXor;
-        unordered_set<int> ans;
+        unordered_set<int> st(nums.begin(), nums.end());
+        for (int x : st) f[x] = 1;
 
-        // XOR of every pair of distinct elements
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                pairXor.insert(nums[i] ^ nums[j]);
-            }
+        fwht(f);
+
+        for (int i = 0; i < MAXX; i++)
+            f[i] = f[i] * f[i] * f[i];
+
+        fwht(f);
+
+        int ans = 0;
+        for (int i = 0; i < MAXX; i++) {
+            if (f[i] != 0) ans++;
         }
 
-        // (a ^ b) ^ c
-        for (int x : pairXor) {
-            for (int v : nums) {
-                ans.insert(x ^ v);
-            }
-        }
-
-        // Triplets where all three indices are the same
-        for (int v : nums) {
-            ans.insert(v);
-        }
-
-        return ans.size();
+        return ans;
     }
 };
