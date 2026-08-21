@@ -10,51 +10,73 @@ public:
         return a / gcd(a, b) * b;
     }
 
-    ll count(ll x, vector<int>& coins) {
-        int n = coins.size();
-        ll ans = 0;
+    long long findKthSmallest(vector<int>& coins, int k) {
 
-        // All non-empty subsets
-        for (int mask = 1; mask < (1 << n); mask++) {
-            ll L = 1;
-            int bits = 0;
-            bool valid = true;
+        // Remove redundant coins
+        sort(coins.begin(), coins.end());
 
-            for (int i = 0; i < n; i++) {
-                if (mask & (1 << i)) {
-                    bits++;
+        vector<ll> c;
 
-                    L = lcm(L, (ll)coins[i]);
+        for (ll x : coins) {
+            bool redundant = false;
 
-                    // L is already larger than x
-                    if (L > x) {
-                        valid = false;
-                        break;
-                    }
+            for (ll y : c) {
+                if (x % y == 0) {
+                    redundant = true;
+                    break;
                 }
             }
 
-            if (!valid)
-                continue;
-
-            if (bits % 2 == 1)
-                ans += x / L;
-            else
-                ans -= x / L;
+            if (!redundant)
+                c.push_back(x);
         }
 
-        return ans;
-    }
+        int n = c.size();
+        int total = 1 << n;
 
-    long long findKthSmallest(vector<int>& coins, int k) {
+        // lcm[mask] = LCM of all coins in this subset
+        vector<ll> lcmVal(total, 1);
 
+        for (int mask = 1; mask < total; mask++) {
+
+            int bit = __builtin_ctz(mask);
+            int prev = mask & (mask - 1);
+
+            lcmVal[mask] = lcm(lcmVal[prev], c[bit]);
+        }
+
+        // Count numbers <= x divisible by at least one coin
+        auto count = [&](ll x) {
+
+            ll ans = 0;
+
+            for (int mask = 1; mask < total; mask++) {
+
+                if (lcmVal[mask] > x)
+                    continue;
+
+                ll cnt = x / lcmVal[mask];
+
+                // Odd subset -> add
+                // Even subset -> subtract
+                if (__builtin_popcount(mask) & 1)
+                    ans += cnt;
+                else
+                    ans -= cnt;
+            }
+
+            return ans;
+        };
+
+        // Binary search
         ll low = 1;
-        ll high = 1LL * (*min_element(coins.begin(), coins.end())) * k;
+        ll high = c[0] * (ll)k;
 
         while (low < high) {
+
             ll mid = low + (high - low) / 2;
 
-            if (count(mid, coins) >= k)
+            if (count(mid) >= k)
                 high = mid;
             else
                 low = mid + 1;
