@@ -1,105 +1,72 @@
 class Solution {
 public:
-    string lexPalindromicPermutation(string s, string target) {
-        int n = s.size();
+    string lexPalindromicPermutation(string str, string target) {
+        int freq[26] = {0};
+        for (char s : str)
+            freq[s - 'a']++;
 
-        vector<int> cnt(26, 0);
-        for (char c : s)
-            cnt[c - 'a']++;
-
-        int odd = 0;
-        char mid = 0;
-
+        char center = 0;
         for (int i = 0; i < 26; i++) {
-            if (cnt[i] % 2) {
-                odd++;
-                mid = char('a' + i);
+            if (freq[i] % 2) {
+                if (center != 0)
+                    return "";
+                center = 'a' + i;
+                freq[i]--;
             }
         }
 
-        if (odd > 1)
-            return "";
+        int sz = str.length();
+        int half = sz / 2;
+        for (int i = 0; i < half; i++)
+            freq[target[i] - 'a'] -= 2;
 
-        vector<int> halfCnt(26);
-        for (int i = 0; i < 26; i++)
-            halfCnt[i] = cnt[i] / 2;
-
-        int m = n / 2;
-
-        auto makePalindrome = [&](string half) {
-            string res = half;
-
-            if (n % 2)
-                res += mid;
-
-            reverse(half.begin(), half.end());
-            res += half;
-
-            return res;
-        };
-
-        string p = target.substr(0, m);
-
-        vector<int> rem = halfCnt;
-        bool possible = true;
-
-        for (char c : p) {
-            if (rem[c - 'a'] == 0) {
-                possible = false;
-                break;
-            }
-            rem[c - 'a']--;
+        if (check(freq)) {
+            string head = target.substr(0, half);
+            string rev = head;
+            reverse(rev.begin(), rev.end());
+            string tail = "";
+            if (center != 0)
+                tail += center;
+            tail += rev;
+            if (tail > target.substr(half))
+                return head + tail;
         }
 
-        if (possible) {
-            string candidate = makePalindrome(p);
-
-            if (candidate > target)
-                return candidate;
-        }
-
-
-        for (int i = m - 1; i >= 0; i--) {
-
-            vector<int> left = halfCnt;
-            bool ok = true;
-
-            for (int j = 0; j < i; j++) {
-                int x = p[j] - 'a';
-
-                if (left[x] == 0) {
-                    ok = false;
-                    break;
-                }
-
-                left[x]--;
-            }
-
-            if (!ok)
+        for (int i = half - 1; i >= 0; i--) {
+            char w = target[i];
+            freq[w - 'a'] += 2;
+            if (!check(freq))
                 continue;
 
-            for (int c = (p[i] - 'a') + 1; c < 26; c++) {
-
-                if (left[c] == 0)
+            for (int j = (w - 'a') + 1; j < 26; j++) {
+                if (freq[j] == 0)
                     continue;
+                freq[j] -= 2;
+                string result = target.substr(0, i + 1);
+                result[i] = 'a' + j;
 
-                string half = p.substr(0, i);
-                half += char('a' + c);
-
-                left[c]--;
-
-               
-                for (int x = 0; x < 26; x++) {
-                    while (left[x] > 0) {
-                        half += char('a' + x);
-                        left[x]--;
-                    }
+                for (int k = 0; k < 26; k++) {
+                    int cnt = freq[k] / 2;
+                    if (cnt > 0)
+                        result.append(cnt, 'a' + k);
                 }
 
-                return makePalindrome(half);
+                string part = result;
+                reverse(part.begin(), part.end());
+                if (center != 0)
+                    result.push_back(center);
+                result += part;
+                return result;
             }
         }
 
         return "";
+    }
+
+    bool check(int f[]) {
+        for (int i = 0; i < 26; i++)
+            if (f[i] < 0)
+                return false;
+        return true;
     }
 };
