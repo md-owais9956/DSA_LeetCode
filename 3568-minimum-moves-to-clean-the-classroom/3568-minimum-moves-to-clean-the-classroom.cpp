@@ -7,7 +7,6 @@ public:
         int sr, sc;
         vector<pair<int, int>> litter;
 
-        // Find S and all L cells
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (classroom[i][j] == 'S') {
@@ -22,7 +21,6 @@ public:
 
         int k = litter.size();
 
-        // Map each litter cell to its bit
         vector<vector<int>> id(m, vector<int>(n, -1));
 
         for (int i = 0; i < k; i++) {
@@ -31,13 +29,8 @@ public:
 
         int fullMask = (1 << k) - 1;
 
-        // If there is no litter
         if (k == 0) return 0;
 
-        /*
-            best[r][c][mask] = maximum energy with which
-            we have reached (r,c) having collected mask.
-        */
         vector<vector<vector<int>>> best(
             m,
             vector<vector<int>>(n, vector<int>(1 << k, -1))
