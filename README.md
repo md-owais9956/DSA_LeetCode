@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0001-two-sum) |
+| [0056-merge-intervals](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0056-merge-intervals) |
 | [0486-predict-the-winner](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0877-stone-game](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0877-stone-game) |
@@ -63,6 +64,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Sorting
 |  |
 | ------- |
+| [0056-merge-intervals](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0056-merge-intervals) |
 | [0628-maximum-product-of-three-numbers](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [1331-rank-transform-of-an-array](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1331-rank-transform-of-an-array) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
@@ -324,4 +326,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2058-find-the-minimum-and-maximum-number-of-nodes-between-critical-points](https://github.com/md-owais9956/DSA_LeetCode/tree/master/2058-find-the-minimum-and-maximum-number-of-nodes-between-critical-points) |
+## Quicksort
+|  |
+| ------- |
+| [0056-merge-intervals](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0056-merge-intervals) |
 <!---LeetCode Topics End-->
