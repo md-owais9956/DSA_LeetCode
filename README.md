@@ -46,6 +46,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0001-two-sum) |
+| [0003-longest-substring-without-repeating-characters](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [1331-rank-transform-of-an-array](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1331-rank-transform-of-an-array) |
 | [1386-cinema-seat-allocation](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1386-cinema-seat-allocation) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/md-owais9956/DSA_LeetCode/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
@@ -166,6 +167,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## String
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [1081-smallest-subsequence-of-distinct-characters](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1081-smallest-subsequence-of-distinct-characters) |
 | [1927-sum-game](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1927-sum-game) |
 | [2213-longest-substring-of-one-repeating-character](https://github.com/md-owais9956/DSA_LeetCode/tree/master/2213-longest-substring-of-one-repeating-character) |
@@ -310,6 +312,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Sliding Window
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [2904-shortest-and-lexicographically-smallest-beautiful-string](https://github.com/md-owais9956/DSA_LeetCode/tree/master/2904-shortest-and-lexicographically-smallest-beautiful-string) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/md-owais9956/DSA_LeetCode/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3090-maximum-length-substring-with-two-occurrences](https://github.com/md-owais9956/DSA_LeetCode/tree/master/3090-maximum-length-substring-with-two-occurrences) |
