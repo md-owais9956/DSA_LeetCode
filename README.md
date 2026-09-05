@@ -48,6 +48,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0001-two-sum](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0001-two-sum) |
 | [0003-longest-substring-without-repeating-characters](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0141-linked-list-cycle](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0141-linked-list-cycle) |
 | [1331-rank-transform-of-an-array](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1331-rank-transform-of-an-array) |
 | [1386-cinema-seat-allocation](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1386-cinema-seat-allocation) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/md-owais9956/DSA_LeetCode/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
@@ -129,6 +130,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Two Pointers
 |  |
 | ------- |
+| [0141-linked-list-cycle](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0141-linked-list-cycle) |
 | [3302-find-the-lexicographically-smallest-valid-sequence](https://github.com/md-owais9956/DSA_LeetCode/tree/master/3302-find-the-lexicographically-smallest-valid-sequence) |
 | [3734-lexicographically-smallest-palindromic-permutation-greater-than-target](https://github.com/md-owais9956/DSA_LeetCode/tree/master/3734-lexicographically-smallest-palindromic-permutation-greater-than-target) |
 | [3867-sum-of-gcd-of-formed-pairs](https://github.com/md-owais9956/DSA_LeetCode/tree/master/3867-sum-of-gcd-of-formed-pairs) |
@@ -325,9 +327,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Linked List
 |  |
 | ------- |
+| [0141-linked-list-cycle](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0141-linked-list-cycle) |
 | [2058-find-the-minimum-and-maximum-number-of-nodes-between-critical-points](https://github.com/md-owais9956/DSA_LeetCode/tree/master/2058-find-the-minimum-and-maximum-number-of-nodes-between-critical-points) |
 ## Quicksort
 |  |
 | ------- |
 | [0056-merge-intervals](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0056-merge-intervals) |
+## Floyd's Cycle Finding Algorithm
+|  |
+| ------- |
+| [0141-linked-list-cycle](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0141-linked-list-cycle) |
 <!---LeetCode Topics End-->
