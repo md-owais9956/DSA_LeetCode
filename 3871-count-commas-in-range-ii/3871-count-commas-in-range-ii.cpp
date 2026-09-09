@@ -1,21 +1,15 @@
 class Solution {
 public:
     long long countCommas(long long n) {
-        long long comma;
-        if ( n <= 999 )
-            comma = 0;
-        else if ( n <= 999999 ){
-            comma = n-999;
-        }else if ( n <= 999999999 ){
-            comma = (n-999)+(n-999999);
-        }else if ( n <= 999999999999 ){
-            comma = (n-999)+(n-999999)+(n-999999999);
-        }else if (n <= 999999999999999){
-            comma = (n-999)+(n-999999)+(n-999999999)+(n-999999999999);
-        }if(n > 999999999999999){
-            comma = (n-999)+(n-999999)+(n-999999999)+(n-999999999999)+1;
+        long long ans = 0;
+        
+        for (long long p = 1000; p <= n; p *= 1000) {
+            ans += (n - p + 1);
+            
+            if (p > n / 1000)
+                break;
         }
-
-        return comma;
+        
+        return ans;
     }
 };
