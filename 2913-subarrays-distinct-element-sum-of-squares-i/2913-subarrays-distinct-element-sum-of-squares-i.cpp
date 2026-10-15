@@ -5,12 +5,14 @@ public:
         int ans = 0;
 
         for (int i = 0; i < n; i++) {
-            unordered_set<int> st;
+            unordered_set<int> seen;
+            int distinct = 0;
 
             for (int j = i; j < n; j++) {
-                st.insert(nums[j]);
+                if (seen.insert(nums[j]).second) {
+                    distinct++;
+                }
 
-                int distinct = st.size();
                 ans += distinct * distinct;
             }
         }
