@@ -1,45 +1,56 @@
 
 class Solution {
-    static const int MOD = 1e9 + 7;
-    vector<vector<long long>> comb;
+    static constexpr long long MOD = 1'000'000'007;
+    vector<long long> fact;
 
-    long long solve(vector<int>& nums) {
-        int n = nums.size();
+    long long solve(vector<int>& nums, int l, int r) {
+        if (r - l <= 1) return 1;
 
-        if (n <= 2) return 1;
+        int root = nums[l];
+        int mid = l + 1;
 
-        vector<int> left, right;
-
-        for (int i = 1; i < n; i++) {
-            if (nums[i] < nums[0])
-                left.push_back(nums[i]);
-            else
-                right.push_back(nums[i]);
+        for (int i = l + 1; i <= r; ++i) {
+            if (nums[i] < root) {
+                // Partition into left and right subtrees
+            }
         }
 
-        long long ways = comb[n - 1][left.size()];
+        vector<int> left, right;
+        for (int i = l + 1; i <= r; ++i) {
+            if (nums[i] < root) left.push_back(nums[i]);
+            else right.push_back(nums[i]);
+        }
 
-        ways = ways * solve(left) % MOD;
-        ways = ways * solve(right) % MOD;
+        long long ways = comb(left.size() + right.size(), left.size());
+        ways = ways * solve(left, 0, (int)left.size() - 1) % MOD;
+        ways = ways * solve(right, 0, (int)right.size() - 1) % MOD;
 
         return ways;
+    }
+
+    long long modPow(long long a, long long b) {
+        long long res = 1;
+        while (b) {
+            if (b & 1) res = res * a % MOD;
+            a = a * a % MOD;
+            b >>= 1;
+        }
+        return res;
+    }
+
+    long long comb(int n, int k) {
+        return fact[n] * modPow(fact[k], MOD - 2) % MOD
+                    * modPow(fact[n - k], MOD - 2) % MOD;
     }
 
 public:
     int numOfWays(vector<int>& nums) {
         int n = nums.size();
+        fact.assign(n + 1, 1);
 
-        comb.assign(n + 1, vector<long long>(n + 1, 0));
+        for (int i = 1; i <= n; ++i)
+            fact[i] = fact[i - 1] * i % MOD;
 
-        for (int i = 0; i <= n; i++) {
-            comb[i][0] = comb[i][i] = 1;
-
-            for (int j = 1; j < i; j++) {
-                comb[i][j] =
-                    (comb[i - 1][j - 1] + comb[i - 1][j]) % MOD;
-            }
-        }
-
-        return (solve(nums) - 1 + MOD) % MOD;
+        return (solve(nums, 0, n - 1) - 1 + MOD) % MOD;
     }
 };
