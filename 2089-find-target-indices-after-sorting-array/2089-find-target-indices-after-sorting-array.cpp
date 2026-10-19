@@ -2,22 +2,15 @@ class Solution {
 public:
     vector<int> targetIndices(vector<int>& nums, int target) {
 
-        int cntles{0};
-        int cnteql{0};
+        vector<int> v;
+        sort(nums.begin(), nums.end());
         
-        vector<int> indx;
+        for( int i = 0; i < nums.size(); i++ ){
+            if(nums[i] == target){
+                v.push_back(i);
+            }
+        }
+        return v;
 
-        for(auto it : nums){
-            if(it < target){
-                cntles++;
-            }
-            if (it == target){
-                cnteql++;
-            }
-        }
-        for(int i = 0; i < cnteql; i++){
-            indx.push_back(i + cntles);
-        }
-        return indx;
     }
 };
