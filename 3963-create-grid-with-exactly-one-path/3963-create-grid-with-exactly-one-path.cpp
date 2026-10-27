@@ -1,14 +1,20 @@
 class Solution {
 public:
     vector<string> createGrid(int m, int n) {
-        vector<string> grid(m, string(n, '#'));
-
-        for (int i = 0; i < m; ++i)
-            grid[i][0] = '.';
-
-        for (int j = 0; j < n; ++j)
-            grid[m - 1][j] = '.';
-
-        return grid;
+        vector<string> res(m, string(n, '#'));
+        int r = 0, c = 0;
+        
+        res[r][c] = '.';
+        
+        while (r < m - 1 || c < n - 1) {
+            if (r < m - 1 && (c == n - 1 || abs((r + 1) * (n - 1) - c * (m - 1)) <= abs(r * (n - 1) - (c + 1) * (m - 1))))
+                r++;
+            else
+                c++;
+                
+            res[r][c] = '.';
+        }
+        
+        return res;
     }
 };
