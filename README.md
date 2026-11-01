@@ -76,6 +76,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0001-two-sum](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0001-two-sum) |
 | [0003-longest-substring-without-repeating-characters](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0012-integer-to-roman](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0012-integer-to-roman) |
 | [0141-linked-list-cycle](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0141-linked-list-cycle) |
 | [1096-brace-expansion-ii](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1096-brace-expansion-ii) |
 | [1331-rank-transform-of-an-array](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1331-rank-transform-of-an-array) |
@@ -125,6 +126,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Math
 |  |
 | ------- |
+| [0012-integer-to-roman](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0012-integer-to-roman) |
 | [0486-predict-the-winner](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0836-rectangle-overlap](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0836-rectangle-overlap) |
@@ -259,6 +261,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0005-longest-palindromic-substring](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0005-longest-palindromic-substring) |
+| [0012-integer-to-roman](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0012-integer-to-roman) |
 | [0020-valid-parentheses](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0020-valid-parentheses) |
 | [0022-generate-parentheses](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0022-generate-parentheses) |
 | [0032-longest-valid-parentheses](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0032-longest-valid-parentheses) |
