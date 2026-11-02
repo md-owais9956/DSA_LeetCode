@@ -8,6 +8,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0001-two-sum](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0001-two-sum) |
 | [0056-merge-intervals](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0056-merge-intervals) |
+| [0462-minimum-moves-to-equal-array-elements-ii](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0462-minimum-moves-to-equal-array-elements-ii) |
 | [0486-predict-the-winner](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0835-image-overlap](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0835-image-overlap) |
@@ -105,6 +106,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0056-merge-intervals](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0056-merge-intervals) |
+| [0462-minimum-moves-to-equal-array-elements-ii](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0462-minimum-moves-to-equal-array-elements-ii) |
 | [0628-maximum-product-of-three-numbers](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [1096-brace-expansion-ii](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1096-brace-expansion-ii) |
 | [1331-rank-transform-of-an-array](https://github.com/md-owais9956/DSA_LeetCode/tree/master/1331-rank-transform-of-an-array) |
@@ -127,6 +129,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0012-integer-to-roman](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0012-integer-to-roman) |
+| [0462-minimum-moves-to-equal-array-elements-ii](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0462-minimum-moves-to-equal-array-elements-ii) |
 | [0486-predict-the-winner](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0836-rectangle-overlap](https://github.com/md-owais9956/DSA_LeetCode/tree/master/0836-rectangle-overlap) |
